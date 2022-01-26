@@ -10,7 +10,7 @@ import com.geekbrains.cleancodeapp.model.data.DataModel
 
 class MainAdapter(
     private var onListItemClickListener: OnListItemClickListener,
-    private var data: List<DataModel>
+    private var data: List<DataModel> = arrayListOf()
 ) :
     RecyclerView.Adapter<MainAdapter.RecyclerItemViewHolder>() {
 

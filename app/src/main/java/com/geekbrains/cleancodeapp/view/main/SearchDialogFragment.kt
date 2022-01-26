@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.geekbrains.cleancodeapp.databinding.SearchDialogFragmentBinding
+import com.geekbrains.cleancodeapp.utils.getEmptyString
 
 class SearchDialogFragment : BottomSheetDialogFragment() {
 
@@ -67,7 +68,7 @@ class SearchDialogFragment : BottomSheetDialogFragment() {
 
     private fun addOnClearClickListener() {
         binding.clearTextImageview.setOnClickListener {
-            binding.searchEditText.setText("")
+            binding.searchEditText.setText(String.getEmptyString())
             binding.searchButtonTextview.isEnabled = false
         }
     }
