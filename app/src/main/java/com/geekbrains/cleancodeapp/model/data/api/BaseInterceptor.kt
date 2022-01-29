@@ -1,4 +1,4 @@
-package com.geekbrains.cleancodeapp.model.datasource
+package com.geekbrains.cleancodeapp.model.data.api
 
 import okhttp3.Interceptor
 import okhttp3.Response

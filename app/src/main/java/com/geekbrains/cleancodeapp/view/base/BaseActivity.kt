@@ -7,7 +7,7 @@ import android.os.PersistableBundle
 import androidx.appcompat.app.AppCompatActivity
 import com.geekbrains.cleancodeapp.R
 import com.geekbrains.cleancodeapp.model.data.AppState
-import com.geekbrains.cleancodeapp.presenter.Interactor
+import com.geekbrains.cleancodeapp.viewmodel.Interactor
 import com.geekbrains.cleancodeapp.viewmodel.BaseViewModel
 import com.geekbrains.cleancodeapp.utils.network.isOnline
 import com.geekbrains.cleancodeapp.utils.Ui.AlertDialogFragment
