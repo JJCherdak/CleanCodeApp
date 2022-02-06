@@ -1,15 +1,15 @@
-package com.geekbrains.cleancodeapp.view.main
+package com.geekbrains.cleancodeapp.view.history
 
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.ViewModel
 import com.geekbrains.cleancodeapp.model.data.AppState
-import com.geekbrains.cleancodeapp.utils.parseOnlineSearchResults
+import com.geekbrains.cleancodeapp.utils.parseLocalSearchResults
 import com.geekbrains.cleancodeapp.viewmodel.BaseViewModel
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
-class MainViewModel(private val interactor: MainInteractor) :
-    BaseViewModel<AppState>() {
+class HistoryViewModel (private val interactor: HystoryInteractor):
+BaseViewModel<AppState> () {
+
 
     private val liveDataForViewToObserve: LiveData<AppState> = _mutableLiveData
 
@@ -23,8 +23,8 @@ class MainViewModel(private val interactor: MainInteractor) :
         viewModelCoroutineScope.launch { startInteractor(word, isOnline) }
     }
 
-    private suspend fun startInteractor(word: String, isOnline: Boolean) = withContext(Dispatchers.IO) {
-        _mutableLiveData.postValue(parseOnlineSearchResults(interactor.getData(word, isOnline)))
+    private suspend fun startInteractor(word: String, isOnline: Boolean) {
+        _mutableLiveData.postValue(parseLocalSearchResults(interactor.getData(word, isOnline)))
     }
 
     override fun handleError(error: Throwable) {
